@@ -37,6 +37,7 @@ set build_release=
 set enable_vtune_arg=
 set configure_flags=
 set build_addons=
+set vcversion=
 
 :next-arg
 if "%1"=="" goto args-done
@@ -75,6 +76,8 @@ if /i "%1"=="intl-none"     set i18n_arg=%1&goto arg-ok
 if /i "%1"=="download-all"  set download_arg="--download=all"&goto arg-ok
 if /i "%1"=="ignore-flaky"  set test_args=%test_args% --flaky-tests=dontcare&goto arg-ok
 if /i "%1"=="enable-vtune"  set enable_vtune_arg=1&goto arg-ok
+if /i "%1"=="2013"          set vcversion=%1&goto arg-ok
+if /i "%1"=="2015"          set vcversion=%1&goto arg-ok
 
 echo Warning: ignoring invalid command line option `%1`.
 
@@ -122,6 +125,7 @@ call :getnodeversion || exit /b 1
 if defined target_env if "%target_env%" NEQ "vc2015" goto vc-set-2013
 @rem Look for Visual Studio 2015
 echo Looking for Visual Studio 2015
+if "%vcversion%"=="2013" goto vc-set-2013
 if not defined VS140COMNTOOLS goto vc-set-2013
 if not exist "%VS140COMNTOOLS%\..\..\vc\vcvarsall.bat" goto vc-set-2013
 echo Found Visual Studio 2015

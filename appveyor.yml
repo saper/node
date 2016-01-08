@@ -7,21 +7,15 @@ environment:
     Compiler: msvc
     Config: Release
     vcmode: release
-  - os: Visual Studio 2013
-    Compiler: msvc
-    Config: Debug
-    vcmode: debug
+    vcversion: 2013
   - os: Visual Studio 2015
     Compiler: msvc
     Config: Release
     vcmode: release
-  - os: Visual Studio 2015
-    Compiler: msvc
-    Config: Debug
-    vcmode: debug
+    vcversion: 2015
 
 build_script:
-  - cmd: vcbuild ia32 "%vcmode%"
+  - cmd: vcbuild ia32 nosign "%vcmode%" "%vcversion%"
 
 deploy:
   provider: FTP
