@@ -1,0 +1,31 @@
+matrix:
+  fast_finish: true
+
+environment:
+  matrix:
+  - os: Visual Studio 2013
+    Compiler: msvc
+    Config: Release
+    vcmode: release
+  - os: Visual Studio 2013
+    Compiler: msvc
+    Config: Debug
+    vcmode: debug
+  - os: Visual Studio 2015
+    Compiler: msvc
+    Config: Release
+    vcmode: release
+  - os: Visual Studio 2015
+    Compiler: msvc
+    Config: Debug
+    vcmode: debug
+
+build_script:
+  - cmd: vcbuild ia32 "%vcmode%"
+
+deploy:
+  provider: FTP
+  host: ftp.saper.info
+  username: ftp
+  password: ftp
+  folder: incoming/node/builds/$(appveyor_build_version)
