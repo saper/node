@@ -19,7 +19,7 @@ build_script:
 
 artifacts:
   - path: $(Config)
-    name: node-%vcmode%.zip
+    name: node-%vcversion%-%vcmode%.zip
     type: zip
 
 deploy:
