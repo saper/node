@@ -15,7 +15,7 @@ environment:
     vcversion: 2015
 
 build_script:
-  - cmd: vcbuild ia32 nosign %vcmode% %vcversion%
+  - cmd: vcbuild ia32 nosign "%vcmode%" "%vcversion%"
 
 deploy:
   provider: FTP
@@ -23,3 +23,4 @@ deploy:
   username: ftp
   password: ftp
   folder: incoming/node/builds/$(appveyor_build_version)
+  artifacts:
