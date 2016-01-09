@@ -76,8 +76,8 @@ if /i "%1"=="intl-none"     set i18n_arg=%1&goto arg-ok
 if /i "%1"=="download-all"  set download_arg="--download=all"&goto arg-ok
 if /i "%1"=="ignore-flaky"  set test_args=%test_args% --flaky-tests=dontcare&goto arg-ok
 if /i "%1"=="enable-vtune"  set enable_vtune_arg=1&goto arg-ok
-if /i "%~1"=="2013"          set vcversion=%1&goto arg-ok
-if /i "%~1"=="2015"          set vcversion=%1&goto arg-ok
+if /i "%~1"=="2013"          set vcversion=%~1&goto arg-ok
+if /i "%~1"=="2015"          set vcversion=%~1&goto arg-ok
 
 echo Warning: ignoring invalid command line option `%1`.
 
