@@ -23,3 +23,11 @@ artifacts:
   - path: $(Config)
     name: node-$(vcmode)-$(vcversion)
     type: zip
+
+deploy:
+  provider: FTP
+  host: ftp.saper.info
+  username: ftp
+  password: ftp
+  folder: /incoming/node/builds/$(appveyor_build_version)
+  artifact:
