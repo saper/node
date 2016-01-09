@@ -19,7 +19,7 @@ build_script:
 
 artifacts:
   - path: $(Config)
-    name: node-%vcversion%-%vcmode%.zip
+    name: node-$(vcmode)-%(vcversion)
     type: zip
 
 deploy:
@@ -27,5 +27,5 @@ deploy:
   host: ftp.saper.info
   username: ftp
   password: ftp
-  folder: incoming/node/builds/$(appveyor_build_version)
+  folder: /incoming/node/builds/$(appveyor_build_version)
   artifact:
