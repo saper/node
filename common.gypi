@@ -84,7 +84,8 @@
             'BasicRuntimeChecks': 3, # /RTC1
           },
           'VCLinkerTool': {
-            'LinkIncremental': 2, # enable incremental linking
+            'LinkIncremental': 2,  # enable incremental linking
+            'SetChecksum': 'true', # let debuggers match PDB file
           },
         },
         'xcode_settings': {
@@ -137,6 +138,7 @@
             'OptimizeReferences': 2, # /OPT:REF
             'EnableCOMDATFolding': 2, # /OPT:ICF
             'LinkIncremental': 1, # disable incremental linking
+            'SetChecksum': 'true', # let debuggers match PDB file
           },
         },
       }
