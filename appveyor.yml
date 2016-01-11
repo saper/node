@@ -17,7 +17,7 @@ environment:
     vcversion: 2015
 
 build_script:
-  - cmd: vcbuild ia32 nosign $(vcmode) $(vcversion)
+  - cmd: vcbuild ia32 nosign "%vcmode%" "%vcversion%"
 
 artifacts:
   - path: $(Config)
