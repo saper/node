@@ -46,8 +46,8 @@ if /i "%1"=="clean"         set target=Clean&goto arg-ok
 if /i "%1"=="ia32"          set target_arch=x86&goto arg-ok
 if /i "%1"=="x86"           set target_arch=x86&goto arg-ok
 if /i "%1"=="x64"           set target_arch=x64&goto arg-ok
-if /i "%1"=="vc2013"        set target_env=vc2013&goto arg-ok
-if /i "%1"=="vc2015"        set target_env=vc2015&goto arg-ok
+if /i "%~1"=="vc2013"        set target_env=vc2013&goto arg-ok
+if /i "%~1"=="vc2015"        set target_env=vc2015&goto arg-ok
 if /i "%1"=="noprojgen"     set noprojgen=1&goto arg-ok
 if /i "%1"=="nobuild"       set nobuild=1&goto arg-ok
 if /i "%1"=="nosign"        set nosign=1&goto arg-ok
