@@ -9,12 +9,12 @@ environment:
     Compiler: msvc
     Config: Release
     vcmode: release
-    vcversion: 2013
+    vcversion: vc2013
   - os: Visual Studio 2015
     Compiler: msvc
     Config: Release
     vcmode: release
-    vcversion: 2015
+    vcversion: vc2015
 
 clone_folder: c:\projects\node
 
